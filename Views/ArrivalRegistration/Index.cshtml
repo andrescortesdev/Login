@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center">Bienvenid@@ @ViewBag.Names </h1>
+             @if(TempData["MessageSuccess"] != null){
+                <div class="alert alert-success" role="alert">
+                    @TempData["MessageSuccess"]
+                </div>
+                }   
+              @if(ViewBag.Entry == null) {
+             <a asp-controller="ArrivalRegistration" asp-action="CheckIn" class="mt-5 btn btn-primary w-100">Registrar Hora de Ingreso</a>
+            }else{
+             <a asp-controller="ArrivalRegistration" asp-action="CheckOut" class="mt-5 btn btn-warning w-100">Registrar Hora de Salida</a>
+
+            }
+        </div>
+    </div>
+</div>
